@@ -26,9 +26,13 @@ print(gx(7,b=4,k=2))
 
 
 #przykład 3
-def rank(*lang,nrrank):
+def rank(*lang,nrrank,**kwargs):
     print(f'ranking języków programowania nr {nrrank}, pierwsze miejsce: {lang[0]}, '
           f'drugie miejsce: {lang[1]}, trzecie miejsce: {lang[2]}')
+    print(kwargs)
 
-rank("Python","Java","C++",nrrank=23)
+rank("Python","Java","C++",nrrank=23,cos = 3253245)
+
 rank("Python","C#","Java","JavaScript","C++",nrrank=23)
+
+
