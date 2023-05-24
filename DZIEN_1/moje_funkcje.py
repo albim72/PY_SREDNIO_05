@@ -95,5 +95,7 @@ np2 = list(filter(ft,lb))
 print(np2)
 
 
+cube = list(map(lambda x:x**3,lb))
+print(cube)
 
 
