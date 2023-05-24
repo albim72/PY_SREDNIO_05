@@ -69,19 +69,31 @@ def innemulti(a,k):
 
 print(innemulti(4,7))
 
-mojalista = [n**8 for n in range(10_000_000) if n%2==0] #list comprehension
-print(mojalista)
-sl = sum(mojalista)
-print(sl)
+# mojalista = [n**8 for n in range(10_000_000) if n%2==0] #list comprehension
+# print(mojalista)
+# sl = sum(mojalista)
+# print(sl)
+#
+# ekstralista = []
+# for n in range(10_000_000):
+#     if n % 2 == 0 and n%10 == 6:
+#         ekstralista.append(n**8)
 
-ekstralista = []
-for n in range(10_000_000):
-    if n % 2 == 0 and n%10 == 6:
-        ekstralista.append(n**8)
-
-print(len(ekstralista))
+# print(len(ekstralista))
 
 #zastosowania funkcji
 
 lb = [67,9,12,-4,0,112,9,-99,178,12,-2,14,67,55,111,-3]
+
+nparz = list(filter(lambda x:x%2==0,lb))
+print(nparz)
+
+def ft(x):
+    return x%2==0
+
+np2 = list(filter(ft,lb))
+print(np2)
+
+
+
 
