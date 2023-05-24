@@ -29,11 +29,22 @@ print(type(a))
 imiona = ["Jan","Piotr","Anna","Kinga","Henryk","Leon","Nadia","Anna","Jan"]
 imiona_tp = ("Jan","Piotr","Anna","Kinga","Henryk","Leon","Nadia","Anna","Jan")
 
+
+
+list(imiona_tp).sort()
+print(imiona_tp)
+print(type(imiona_tp))
+
 print(imiona)
 print(type(imiona))
 
 print(imiona_tp)
 print(type(imiona_tp))
+
+
+drugi = ("Karol","Leon")
+imiona_tp = imiona_tp + drugi
+print(imiona_tp)
 
 print(imiona[2:4])
 print(imiona_tp[2:4])
@@ -109,10 +120,23 @@ print(list(enumerate(osoby)))
 for i,os in enumerate(osoby):
     print(i,os)
 
+mojalista = ["Kraków",523532,6.3434,True,[2,4,3,None,False],"abc"]
+print(mojalista)
+print(mojalista[4][2])
+
+osoby.sort()
+print(osoby)
+print("____________________________________")
+#konwersja przez list()
+im = ("Jan","Piotr","Anna","Kinga","Henryk","Leon","Nadia","Anna","Jan")
+
+print(sorted(list(im)))
 
 
-
-
-
-
+lt = list(im)
+lt.sort()
+print(im)
+print(lt)
+print(type(im))
+print(type(lt))
 
