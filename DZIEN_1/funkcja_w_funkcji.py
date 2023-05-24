@@ -25,6 +25,19 @@ print(osoba(info))
 
 #prosty dekorator
 
+# def nowafunkcja(funkcja,drugafunkcja):
+#     def wrapper(*args):
+#         print(f"Uruchomienie funkcji: {funkcja.__name__}")
+#         print(f"Uruchomienie funkcji: {drugafunkcja.__name__}")
+#         ts = time.perf_counter()
+#         print(funkcja(*args))
+#         print(drugafunkcja(*args))
+#         tk = time.perf_counter()
+#         print(f"zakończenie pracy funkcji: {funkcja.__name__}")
+#         print(f"zakończenie pracy funkcji: {drugafunkcja.__name__}")
+#         print(f"czas wykonania funkcji: {tk-ts} s")
+#     return wrapper
+
 def nowafunkcja(funkcja):
     def wrapper(*args):
         print(f"Uruchomienie funkcji: {funkcja.__name__}")
@@ -39,8 +52,15 @@ def policz(a,b):
     n = sum([(a+n)**b for n in range(350_000)])
     return n
 
+def wyznacz(a,b):
+    n = math.sqrt(a+b)
+    return n
+
 wyn = nowafunkcja(policz)
 wyn(2,3)
+
+# wz = nowafunkcja(policz,wyznacz)
+# wz(4,3)
 
 @nowafunkcja
 def policz_2(a,b,c):
