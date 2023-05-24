@@ -25,5 +25,28 @@ print(osoba(info))
 
 #prosty dekorator
 
-def nowafunkcja(funkcja)
+def nowafunkcja(funkcja):
+    def wrapper(*args):
+        print(f"Uruchomienie funkcji: {funkcja.__name__}")
+        ts = time.perf_counter()
+        print(funkcja(*args))
+        tk = time.perf_counter()
+        print(f"zakończenie pracy funkcji: {funkcja.__name__}")
+        print(f"czas wykonania funkcji: {tk-ts} s")
+    return wrapper
+
+def policz(a,b):
+    n = sum([(a+n)**b for n in range(350_000)])
+    return n
+
+wyn = nowafunkcja(policz)
+wyn(2,3)
+
+@nowafunkcja
+def policz_2(a,b,c):
+    n = sum([(a/c+n)**b for n in range(990_000)])
+    return n
+
+
+policz_2(2,6,1)
 
