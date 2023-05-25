@@ -8,11 +8,11 @@ def normalfunc(a):
 
 @jit(target_backend='cuda')
 def gpufunc(a):
-    for i in range(10_000_000):
+    for i in range(1_100_000_000):
         a[i] += 1
 
 if __name__ == '__main__':
-    n = 10_000_000
+    n = 1_100_000_000
     a = np.ones(n,dtype=np.float64)
 
     start = timer()
