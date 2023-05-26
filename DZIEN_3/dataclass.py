@@ -16,13 +16,13 @@ os1 = Osoba(6,"Jan","Kos",45,"Tarnów")
 print(os1)
 print(os1.imie)
 
-@dataclass
+@dataclass(init=False)
 class Pracownik(Osoba):
     firma:str
     latapracy:int
     stanowisko:str
     wynagrodzenie:float
-    full_name: str = field(init=False, repr=False)
+    #full_name: str = field(init=False, repr=False)
 
     def __init__(self,id,imie,nazwisko,wiek,latapracy,stanowisko,wynagrodzenie=3700):
         super().__init__(id,imie,nazwisko,wiek,"Kraków")
@@ -30,7 +30,8 @@ class Pracownik(Osoba):
         self.stanowisko = stanowisko
         self.wynagrodzenie = wynagrodzenie
         self.firma = "ABC Sp zoo"
-    
+        self.full_name: str = field(init=True, repr=False)
+
     def __post_init__(self):
         self.full_name = self.imie + " " + self.nazwisko
 
@@ -43,6 +44,8 @@ print(pr1)
 print(pr1.printpracownik())
 print(type(os1))
 print(type(pr1))
+
+print(pr1.full_name)
 
 
 
